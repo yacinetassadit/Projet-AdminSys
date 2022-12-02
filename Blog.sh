@@ -1,15 +1,25 @@
 #!/bin/bash
-touch index.html
-cat > index.html << EOF
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>New Page</title>
-  </head>
-  <body>
-    <h1>Hello, World!</h1>
-  </body>
-</html>
 
-EOF
-x-www-browser index.html
+case $# in
+
+  0) 
+     if [ -e "fichiers/scripts/createWebPage.sh" ];then
+        /bin/bash ./fichiers/scripts/createWebPage.sh
+     else
+        echo "File createWebPage.sh not found"
+        exit 0
+     fi ;;
+  #  create;;
+  1)
+     if [ "$1" = "--help" ] || [ "$1" = "-h" ]
+       then
+          #help
+
+          if [ -e "fichiers/scripts/help.sh" ];then
+            /bin/bash fichiers/scripts/help.sh
+          else
+            echo "File help.sh not found"
+          exit 0
+          fi 
+      fi
+
