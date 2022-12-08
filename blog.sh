@@ -9,7 +9,7 @@ case $# in
         echo "File createWebPage.sh not found"
         exit 0
      fi ;;
-  #  create;;
+  
   1)
      if [ "$1" = "--help" ] || [ "$1" = "-h" ]
        then

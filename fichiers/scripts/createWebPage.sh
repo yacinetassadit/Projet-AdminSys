@@ -12,18 +12,12 @@ function createWebPage {
     file="$f"
     ext=${file#*.}
     if [[ " ${extensions[*]} " =~ $ext ]]; then
-      echo "<div class='col col-md-4' >
-	    <img style='height: 300px; width: 300px;margin: 10px;'  src='""$file""'>
+      echo "<div class='w3-row-padding w3-padding-16 w3-center' id='picture'>
+	    <img style="width:100%"  src='""$file""'>
             </div>
-            <br>" >> index.html  
+            " >> index.html  
     fi  
   done
-
-  echo "</div>
-        <br>
-      <h1>les articles</h1>
-      <div class='container row'>">>index.html
-
       nb_line=$(wc -l < fichiers/database.csv)
       declare -a array_article
       declare -a array_image
@@ -35,14 +29,14 @@ function createWebPage {
 
       for ((i=1; i<=$nb_line; i++)) ;
       do
-        echo "<div class='col col-md-4' >">>index.html  
+        echo "<div class="w3-row-padding w3-padding-16 w3-center" id="picture">">>index.html  
 
       if [ "${array_image[$i]}" = "null" ];then :
        else 
-        echo "<img style='height: 300px; width: 300px;margin: 10px;'  src='""fichiers/articles/images/${array_image[$i]}""'>">>index.html 
+        echo "<img style='width:100%'  src='""fichiers/articles/images/${array_image[$i]}""'>">>index.html 
        fi
 
-        echo "<p  style=' width: 300px;margin: 10px;'>">>index.html
+        echo "<p>">>index.html
         cat "fichiers/articles/${array_article[$i]}" >> index.html
         echo "</p>
              </div>
@@ -50,9 +44,6 @@ function createWebPage {
       
 
       done    
-
-
-  echo "</div>">>index.html
 
   cat fichiers/endPageContent.txt >> index.html 
 }
