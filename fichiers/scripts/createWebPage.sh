@@ -21,7 +21,7 @@ function createWebPage {
       nb_line=$(wc -l < fichiers/database.csv)
       declare -a array_article
       declare -a array_image
-      for ((i=1; i<=$nb_ligne; i++)) ;
+      for ((i=1; i<=$nb_line; i++)) ;
       do 
       array_article[$i]=$(awk 'BEGIN{FS=";";OFS="\n"} FNR=='$i'{print $1;exit}' fichiers/database.csv)
       array_image[$i]=$(awk 'BEGIN{FS=";";OFS="\n"} FNR=='$i'{print $2;exit}' fichiers/database.csv)
