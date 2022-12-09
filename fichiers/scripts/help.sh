@@ -8,7 +8,7 @@ function help {
   echo ""
   echo "notre script qui genere un blog html "
   echo ""
-  echo "- ./script.sh permet d'executer le script "
+  echo "- ./blog.sh permet d'executer le script "
   echo ""
 
 }
