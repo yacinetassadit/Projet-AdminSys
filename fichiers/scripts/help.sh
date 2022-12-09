@@ -16,5 +16,5 @@ function help {
   echo ""
   echo "- ./blog.sh addArticle -le chemin de l'article- cette commande de rajouter un article"
 
-
+}
 help
