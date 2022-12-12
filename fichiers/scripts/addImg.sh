@@ -2,7 +2,7 @@
 
 
 function addImg {
-  retval=0
+  val=0
 
   img=$IMG_PATH
   if [ -e "$img" ];then
@@ -10,7 +10,7 @@ function addImg {
     declare -a extensions=( "JPG" "jpg" "jpeg" "JPEG" "PNG" "png" )
       if [[ " ${extensions[*]} " =~ $ext ]]; then
         cp "$IMG_PATH" "$IMGDIR_PATH"
-        retval=1
+        val=1
         echo "Image ajoutée."
 
         if [ -e "fichiers/scripts/createWebPage.sh" ];then
@@ -26,7 +26,7 @@ function addImg {
     echo "File $IMG_PATH Not Found"
   fi
   
-return "$retval"
+return "$val"
 }
 
 

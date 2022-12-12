@@ -9,7 +9,7 @@ function addArticle {
       if [[ " ${extensions[*]} " =~ $ext ]]; then
         cp "$ARTICLE_PATH" fichiers/articles/
         nom_fichier=$(basename "${ARTICLE_PATH}")
-        echo "$nom_fichier;null">>fichiers/database.csv
+        echo "$nom_fichier;">>fichiers/database.csv
         echo "Article ajouté."
 
         if [ -e "fichiers/scripts/createWebPage.sh" ];then

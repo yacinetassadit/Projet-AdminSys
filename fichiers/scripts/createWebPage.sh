@@ -7,7 +7,7 @@ function createWebPage {
   cat fichiers/startPageContent.txt >> index.html  
 
   declare -a extensions=( "JPG" "jpg" "jpeg" "JPEG" "PNG" "png" )
-  for f in  images/*.*
+  for f in  Images/*.*
   do
     file="$f"
     ext=${file#*.}

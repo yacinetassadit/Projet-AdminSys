@@ -36,24 +36,20 @@ case $# in
     if [ "$1" = "addImg" ]
       then
 
-        "$2" "images/"
-
         IMG_PATH=$2
-        IMGDIR_PATH="images/"
+        IMGDIR_PATH="Images/"
         export IMG_PATH
         export IMGDIR_PATH
 
-       if [ -e "fichiers/scripts/addImage.sh" ];then
-        /bin/bash fichiers/scripts/addImage.sh
+       if [ -e "fichiers/scripts/addImg.sh" ];then
+        /bin/bash fichiers/scripts/addImg.sh
        else
-         echo "Scrpit addImage.sh not found"
+         echo "Scrpit addImg.sh not found"
        exit 0
        fi 
 
     elif [ "$1" = "addArticle" ]
       then
-
-        "$2"
 
         ARTICLE_PATH=$2
         export ARTICLE_PATH
@@ -64,11 +60,9 @@ case $# in
          echo "Script addArticle.sh not found"
        exit 0
        fi 
-    
+
     elif [ "$1" = "build" ]
       then
-
-        #build "$2"
 
         BUILD_PATH=$2
         export BUILD_PATH
@@ -79,8 +73,6 @@ case $# in
          echo "script build.sh not found"
        exit 0
        fi
-
-
     else
        echo "Syntax error"
      fi;;  
@@ -95,10 +87,9 @@ case $# in
     
     if [ "$1" = "addArticle" ] && [ "$3" = "addImg"  ]
       then
-        "$2" "$4" "fichiers/articles/images/"
 
         ARTICLE_PATH=$2
-        IMGDIR_PATH="fichiers/articles/images/"
+        IMGDIR_PATH="fichiers/articles/Images/"
         IMG_PATH=$4
         export ARTICLE_PATH
         export IMGDIR_PATH
