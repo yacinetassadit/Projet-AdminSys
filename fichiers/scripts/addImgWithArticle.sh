@@ -26,7 +26,7 @@ function addImgWithArticle {
         nomFichier=$(basename "${ARTICLE_PATH}")
         nomImage=$(basename "${IMG_PATH}")
         echo "$nomFichier;$nomImage">>fichiers/database.csv
-        echo "Image et Article ajoutés. "
+        echo "Article ajouté. "
 
         if [ -e "fichiers/scripts/createWebPage.sh" ];then
         /bin/bash fichiers/scripts/createWebPage.sh
