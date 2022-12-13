@@ -25,9 +25,14 @@ case $# in
     elif [ "$1" = "addArticle" ]
        then
           echo "il manque un argument! "
-    elif [ "$1" = "build" ]
+    elif [ "$1" = "internet" ]
        then
-          echo "veuillez indiquer le chemin du dossier "
+          if [ -e "fichiers/scripts/accessInternet.sh" ];then
+        /bin/bash fichiers/scripts/accessInternet.sh
+       else
+         echo "File accessInternet.sh not found"
+       exit 0
+       fi
      else
        echo  "Syntax error"
      fi;;
@@ -60,19 +65,6 @@ case $# in
          echo "Script addArticle.sh not found"
        exit 0
        fi 
-
-    elif [ "$1" = "build" ]
-      then
-
-        BUILD_PATH=$2
-        export BUILD_PATH
-
-        if [ -e "fichiers/scripts/build.sh" ];then
-        /bin/bash fichiers/scripts/build.sh
-       else
-         echo "script build.sh not found"
-       exit 0
-       fi
     else
        echo "Syntax error"
      fi;;  
@@ -89,16 +81,16 @@ case $# in
       then
 
         ARTICLE_PATH=$2
-        IMGDIR_PATH="fichiers/articles/Images/"
+        IMGDIR_PATH="fichiers/Images_articles/"
         IMG_PATH=$4
         export ARTICLE_PATH
         export IMGDIR_PATH
         export IMG_PATH
 
-        if [ -e "fichiers/scripts/addArticleWithImage.sh" ];then
-        /bin/bash fichiers/scripts/addArticleWithImage.sh
+        if [ -e "fichiers/scripts/addImgWithArticle.sh" ];then
+        /bin/bash fichiers/scripts/addImgWithArticle.sh
        else
-         echo "scripts addArticleWithImage.sh not found"
+         echo "scripts addImgWithArticle.sh not found"
        exit 0
        fi 
 

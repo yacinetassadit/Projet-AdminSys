@@ -33,7 +33,7 @@ function createWebPage {
 
       if [ "${array_image[$i]}" = "null" ];then :
        else 
-        echo "<img style='width:100%'  src='""fichiers/articles/Images/${array_image[$i]}""'>">>index.html 
+        echo "<img style='width:100%'  src='""fichiers/Images_articles/${array_image[$i]}""'>">>index.html 
        fi
 
         echo "<p>">>index.html
