@@ -45,7 +45,8 @@ function createWebPage {
 
       done    
 
-  cat fichiers/endPageContent.txt >> index.html 
+  cat fichiers/endPageContent.txt >> index.html
+  x-www-browser index.html 
 }
 
 
